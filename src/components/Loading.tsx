@@ -20,6 +20,11 @@ const Loading = ({ percent }: { percent: number }) => {
   }
 
   useEffect(() => {
+    // Safety timeout: Remove loader after 15s even if something goes wrong
+    const safetyTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 15000);
+
     import("./utils/initialFX").then((module) => {
       if (isLoaded) {
         setClicked(true);
@@ -27,10 +32,13 @@ const Loading = ({ percent }: { percent: number }) => {
           if (module.initialFX) {
             module.initialFX();
           }
+          clearTimeout(safetyTimeout);
           setIsLoading(false);
         }, 900);
       }
     });
+
+    return () => clearTimeout(safetyTimeout);
   }, [isLoaded, setIsLoading]);
 
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {

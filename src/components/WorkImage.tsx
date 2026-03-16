@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { MdArrowOutward } from "react-icons/md";
 
 interface Props {
   image: string;
@@ -9,9 +8,12 @@ interface Props {
 }
 
 const WorkImage = (props: Props) => {
+  const [isHovered, setIsHovered] = useState(false);
   const [isVideo, setIsVideo] = useState(false);
   const [video, setVideo] = useState("");
+
   const handleMouseEnter = async () => {
+    setIsHovered(true);
     if (props.video) {
       setIsVideo(true);
       const response = await fetch(`src/assets/${props.video}`);
@@ -23,22 +25,17 @@ const WorkImage = (props: Props) => {
 
   return (
     <div className="work-image">
-      <a
-        className="work-image-in"
-        href={props.link}
+      <div
+        className={`work-image-in ${isHovered ? "work-image-hovered" : ""}`}
         onMouseEnter={handleMouseEnter}
-        onMouseLeave={() => setIsVideo(false)}
-        target="_blank"
-        data-cursor={"disable"}
+        onMouseLeave={() => { setIsHovered(false); setIsVideo(false); }}
       >
-        {props.link && (
-          <div className="work-link">
-            <MdArrowOutward />
-          </div>
-        )}
         <img src={props.image} alt={props.alt} />
         {isVideo && <video src={video} autoPlay muted playsInline loop></video>}
-      </a>
+        <div className={`work-image-overlay ${isHovered ? "work-image-overlay-visible" : ""}`}>
+          <span className="work-image-overlay-text">CLICK IMAGE TO VIEW SITE</span>
+        </div>
+      </div>
     </div>
   );
 };

@@ -136,7 +136,7 @@ const Work = () => {
           </button>
 
           {/* Slides */}
-          <div className="carousel-track-container" style={{ position: "relative", overflow: "hidden", minHeight: "550px" }}>
+          <div className="carousel-track-container">
             <AnimatePresence initial={false} custom={direction}>
               <motion.div
                 key={page}

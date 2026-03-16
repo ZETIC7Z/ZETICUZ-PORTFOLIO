@@ -1,10 +1,9 @@
 .header {
   display: flex;
-  max-width: var(--cMaxWidth);
-  width: var(--cWidth);
+  max-width: 1440px;
+  width: 100%;
   justify-content: space-between;
-  padding: 20px 0px;
-  margin-bottom: -100px;
+  padding: 30px 5%;
   box-sizing: border-box;
   position: fixed;
   left: 50%;

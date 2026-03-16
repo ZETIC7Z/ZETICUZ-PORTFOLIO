@@ -10,6 +10,8 @@ import {
   SiVite,
   SiBlender,
   SiJavascript,
+  SiWebflow,
+  SiCanva,
 } from "react-icons/si";
 
 const About = () => {
@@ -65,8 +67,8 @@ const About = () => {
               <div className="tech-icon"><FaNodeJs /></div>
               <div className="tech-icon"><FaFigma /></div>
               <div className="tech-icon"><SiVite /></div>
-              <div className="tech-icon"><FaFigma title="Adobe Photoshop" /></div>
-              <div className="tech-icon"><FaFigma title="Adobe Illustrator" /></div>
+              <div className="tech-icon"><SiCanva title="Canva" /></div>
+              <div className="tech-icon"><SiWebflow title="Webflow" /></div>
               <div className="tech-icon"><SiBlender /></div>
               <div className="tech-icon"><SiJavascript /></div>
             </div>

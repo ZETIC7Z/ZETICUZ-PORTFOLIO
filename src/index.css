@@ -15,9 +15,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+  user-select: none;
   --accentColor: #5eead4;
   --backgroundColor: #0a0e17;
   --vh: 100vh;
@@ -33,9 +33,7 @@ h6 {
   font-family: "Geist", sans-serif;
 }
 
-body {
-  overflow: hidden;
-}
+/* Body styles consolidated below */
 
 a {
   color: inherit;
@@ -65,13 +63,37 @@ main {
 
 body {
   margin: 0;
-  height: auto;
-  background-color: #050810;
-  flex-grow: 1;
-  --cWidth: calc(100% - 30px);
-  --cMaxWidth: 1920px;
-  max-width: 100vw;
+  padding: 0;
+  background-color: var(--backgroundColor);
+  color: #fff;
+  font-family: inherit;
   overflow-x: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: auto;
+  --cWidth: 100%;
+}
+
+.main-body {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.section-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1025px) {
+  .section-container {
+    padding: 0 80px;
+  }
 }
 
 .main-body {
@@ -173,8 +195,9 @@ body {
   border: 2px solid rgba(10, 14, 23, 0.8);
 }
 
-/* Works on Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--accentColor) rgba(10, 14, 23, 0.4);
+@supports (scrollbar-width: thin) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accentColor) rgba(10, 14, 23, 0.4);
+  }
 }

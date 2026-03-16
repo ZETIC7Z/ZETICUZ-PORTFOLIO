@@ -1,13 +1,12 @@
 .about-section {
   display: flex;
   align-items: center;
-  justify-content: left;
-  place-items: center;
+  justify-content: flex-start;
   position: relative;
-  opacity: 1;
-  height: auto;
-  width: var(--cWidth);
-  margin: auto;
+  width: 100%;
+  padding: 150px 0;
+  box-sizing: border-box;
+  scroll-margin-top: 80px;
 }
 .about-me {
   padding: 50px 0px;
@@ -47,21 +46,18 @@
 }
 @media only screen and (min-width: 1025px) {
   .about-section {
-    width: var(--cWidth);
-    justify-content: right;
-    max-width: 1920px;
-    height: auto;
-    min-height: 80vh; /* Reduced from 100vh to ensure content fits better */
-    padding: 60px 0;
-    opacity: 1;
+    min-height: 850px;
+    padding-top: 250px;
+    padding-bottom: 150px;
+    justify-content: flex-end;
   }
   .about-me {
-    padding: 0px;
     width: 45%;
     margin-right: 5%;
+    padding: 0;
   }
   .about-me p {
-    font-size: 1.2vw; /* Slightly increased for better readability */
+    font-size: 1.2vw;
     line-height: 1.8vw;
     font-weight: 400;
     margin-bottom: 30px;
