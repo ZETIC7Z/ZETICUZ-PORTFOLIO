@@ -7,11 +7,14 @@ const Landing = ({ children }: PropsWithChildren) => {
       <div className="landing-section" id="landingDiv">
         <div className="landing-container">
           <div className="landing-intro">
+            <div className="profile-image-container">
+              <img src="/images/profile.png" alt="Profile" />
+            </div>
             <h2>Hello! I'm</h2>
             <h1>
-              RAJESH
+              SAM
               <br />
-              <span>CHITYAL</span>
+              <span>PANGILINAN</span>
             </h1>
           </div>
           <div className="landing-info">

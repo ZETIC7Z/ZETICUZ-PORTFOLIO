@@ -34,11 +34,20 @@ const setCharacter = (
 
                 // Change clothing colors to match site theme
                 if (mesh.material) {
-                  if (mesh.name === "BODY.SHIRT") { // The shirt mesh
+                  const name = mesh.name.toLowerCase();
+                  if (name.includes("body") || name.includes("skin") || name.includes("face") || name === "cube002") {
                     const newMat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
-                    newMat.color = new THREE.Color("#8B4513");
+                    newMat.color = new THREE.Color("#ffe0bd"); // Very Fair Skin Tone
                     mesh.material = newMat;
-                  } else if (mesh.name === "Pant") {
+                  } else if (name.includes("cap") || name.includes("hat")) {
+                    const newMat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
+                    newMat.color = new THREE.Color("#ffffff"); // White Cap
+                    mesh.material = newMat;
+                  } else if (name === "body.shirt") {
+                    const newMat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
+                    newMat.color = new THREE.Color("#333333"); // Dark Grey Shirt
+                    mesh.material = newMat;
+                  } else if (name === "pant") {
                     const newMat = (mesh.material as THREE.Material).clone() as THREE.MeshStandardMaterial;
                     newMat.color = new THREE.Color("#000000");
                     mesh.material = newMat;

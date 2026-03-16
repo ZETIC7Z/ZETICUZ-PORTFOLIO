@@ -1,13 +1,11 @@
 import {
+  FaFacebook,
   FaGithub,
   FaInstagram,
-  FaLinkedinIn,
   FaXTwitter,
 } from "react-icons/fa6";
 import "./styles/SocialIcons.css";
-import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
-import HoverLinks from "./HoverLinks";
 
 const SocialIcons = () => {
   useEffect(() => {
@@ -60,32 +58,27 @@ const SocialIcons = () => {
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
-          <a href="https://github.com/rajeshchityal" target="_blank">
+          <a href="https://github.com/ZETIC7Z" target="_blank" rel="noopener noreferrer" title="GitHub">
             <FaGithub />
           </a>
         </span>
         <span>
-          <a href="https://www.linkedin.com/in/rajeshchityal" target="_blank">
-            <FaLinkedinIn />
+          <a href="https://www.facebook.com/share/185tBx61B1/" target="_blank" rel="noopener noreferrer" title="Facebook">
+            <FaFacebook />
           </a>
         </span>
         <span>
-          <a href="https://x.com/rajeshchityal" target="_blank">
+          <a href="https://x.com/SamXerz" target="_blank" rel="noopener noreferrer" title="Twitter">
             <FaXTwitter />
           </a>
         </span>
         <span>
-          <a href="https://www.instagram.com/rajeshchityal" target="_blank">
+          <a href="https://www.instagram.com/zeticuz_?igsh=MW5ibWx6dzFpcXA3cQ==" target="_blank" rel="noopener noreferrer" title="Instagram">
             <FaInstagram />
           </a>
         </span>
       </div>
-      <a className="resume-button" href="#">
-        <HoverLinks text="RESUME" />
-        <span>
-          <TbNotes />
-        </span>
-      </a>
+
     </div>
   );
 };

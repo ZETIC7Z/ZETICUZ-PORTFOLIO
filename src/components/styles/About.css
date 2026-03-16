@@ -50,22 +50,142 @@
     width: var(--cWidth);
     justify-content: right;
     max-width: 1920px;
-    height: var(--vh);
-    padding: 0px;
+    height: auto;
+    min-height: 80vh; /* Reduced from 100vh to ensure content fits better */
+    padding: 60px 0;
     opacity: 1;
   }
   .about-me {
     padding: 0px;
-    width: 50%;
+    width: 45%;
+    margin-right: 5%;
   }
   .about-me p {
-    font-size: 1.9vw;
-    line-height: 2.3vw;
+    font-size: 1.2vw; /* Slightly increased for better readability */
+    line-height: 1.8vw;
+    font-weight: 400;
+    margin-bottom: 30px;
+    max-width: 95%;
   }
 }
-@media only screen and (min-width: 1950px) {
+
+.about-skills-container {
+  display: flex;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.about-skills-box h4 {
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.about-skills-flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.skill-item span {
+  font-size: 12px;
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.skill-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-size: 24px;
+  color: var(--accentColor);
+}
+
+.tech-stack-flex {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.tech-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-size: 22px;
+  color: #eae5ec;
+  transition: color 0.3s ease;
+}
+
+.tech-icon:hover {
+  color: var(--accentColor);
+}
+
+.about-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.about-btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 1px;
+}
+
+.contact-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+}
+
+.resume-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-btn:hover {
+  background: var(--accentColor);
+  color: #fff;
+}
+
+.resume-btn:hover {
+  border-color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .about-skills-container {
+    flex-direction: column;
+    gap: 30px;
+  }
   .about-me p {
-    font-size: 2.5rem;
-    line-height: 2.7rem;
+    font-size: 18px;
+    line-height: 24px;
   }
 }

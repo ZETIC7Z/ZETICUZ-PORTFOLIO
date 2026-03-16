@@ -2,56 +2,64 @@ import "./styles/Career.css";
 
 const Career = () => {
   return (
-    <div className="career-section section-container">
+    <div className="career-section section-container" id="career">
       <div className="career-container">
         <h2>
-          My career <span>&</span>
-          <br /> experience
+          My career <span>&</span> experience
         </h2>
         <div className="career-info">
-          <div className="career-timeline">
+          <div className="career-timeline" id="career-timeline-scroll">
             <div className="career-dot"></div>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Ikshan</h5>
+                <h4>Software Developer</h4>
+                <h5>DICT PHILIPPINES</h5>
+              </div>
+              <h3>2017</h3>
+            </div>
+            <p>
+              Started professional journey at DICT, focusing on software development
+              and government-level application frameworks.
+            </p>
+          </div>
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>Solo/Freelance Developer</h4>
+                <h5>Mitten Made Properties Real Estate Michigan USA</h5>
               </div>
               <h3>2020</h3>
             </div>
             <p>
-              Built 6+ complete applications using React.js. Integrated backend
-              authentication using Node.js & MongoDB. Created responsive UI/UX
-              and designed wireframes using Figma.
+              Transitioned to freelance development, building custom solutions
+              for various clients and refining full-stack expertise.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Senior Full Stack Developer</h4>
-                <h5>Monocept (Max Life Insurance)</h5>
+                <h4>Software Engineer</h4>
+                <h5>Mitten Made Properties Real Estate Michigan USA</h5>
               </div>
-              <h3>2021</h3>
+              <h3>2023</h3>
             </div>
             <p>
-              Led two development teams on Mpro, a large-scale insurance
-              operations platform. Developed multiple modules using React.js &
-              migrated critical functionalities to Node.js microservices.
+              Developed complex systems including ZETFLIX and NEXUS, mastering
+              modern tech stacks and performance optimization.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Logic Loop</h5>
+                <h4>Multiplatform Front End Development React/React.js</h4>
+                <h5>Accenture Philippines</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>2026</h3>
             </div>
             <p>
-              Building Solid, a proprietary low-code platform using Angular,
-              Next.js & NestJS. Delivering production-ready CMS-based projects
-              including e-commerce, CRM, and import-export automation systems.
+              Leading complex UI development, architecting scalable frontend solutions, and delivering highly responsive, optimized cross-platform React applications.
             </p>
           </div>
         </div>

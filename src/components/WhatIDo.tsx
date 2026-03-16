@@ -8,8 +8,9 @@ const WhatIDo = () => {
     containerRef.current[index] = el;
   };
   useEffect(() => {
+    const containers = containerRef.current;
     if (ScrollTrigger.isTouch) {
-      containerRef.current.forEach((container) => {
+      containers.forEach((container) => {
         if (container) {
           container.classList.remove("what-noTouch");
           container.addEventListener("click", () => handleClick(container));
@@ -17,7 +18,7 @@ const WhatIDo = () => {
       });
     }
     return () => {
-      containerRef.current.forEach((container) => {
+      containers.forEach((container) => {
         if (container) {
           container.removeEventListener("click", () => handleClick(container));
         }
@@ -142,6 +143,80 @@ const WhatIDo = () => {
                 <div className="what-tags">REST APIs</div>
                 <div className="what-tags">Microservices</div>
                 <div className="what-tags">Python</div>
+              </div>
+              <div className="what-arrow"></div>
+            </div>
+          </div>
+          <div
+            className="what-content what-noTouch"
+            ref={(el) => setRef(el, 2)}
+          >
+            <div className="what-border1">
+              <svg height="100%">
+                <line
+                  x1="0"
+                  y1="100%"
+                  x2="100%"
+                  y2="100%"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeDasharray="6,6"
+                />
+              </svg>
+            </div>
+            <div className="what-corner"></div>
+            <div className="what-content-in">
+              <h3>UI/UX</h3>
+              <h4>Designing User Experiences</h4>
+              <p>
+                Creating intuitive and aesthetically pleasing designs. I focus on
+                user-centric interfaces that are both functional and beautiful.
+              </p>
+              <h5>Skillset & tools</h5>
+              <div className="what-content-flex">
+                <div className="what-tags">Figma</div>
+                <div className="what-tags">Adobe XD</div>
+                <div className="what-tags">Photoshop</div>
+                <div className="what-tags">Prototyping</div>
+                <div className="what-tags">User Research</div>
+                <div className="what-tags">Wireframing</div>
+              </div>
+              <div className="what-arrow"></div>
+            </div>
+          </div>
+          <div
+            className="what-content what-noTouch"
+            ref={(el) => setRef(el, 3)}
+          >
+            <div className="what-border1">
+              <svg height="100%">
+                <line
+                  x1="0"
+                  y1="100%"
+                  x2="100%"
+                  y2="100%"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeDasharray="6,6"
+                />
+              </svg>
+            </div>
+            <div className="what-corner"></div>
+            <div className="what-content-in">
+              <h3>SOFTWARE APPLICATION</h3>
+              <h4>Developing Desktop Apps</h4>
+              <p>
+                Building powerful and efficient desktop applications. I specialize
+                in creating cross-platform solutions with high performance.
+              </p>
+              <h5>Skillset & tools</h5>
+              <div className="what-content-flex">
+                <div className="what-tags">Electron</div>
+                <div className="what-tags">TypeScript</div>
+                <div className="what-tags">C++</div>
+                <div className="what-tags">Python</div>
+                <div className="what-tags">Vite</div>
+                <div className="what-tags">Desktop Integration</div>
               </div>
               <div className="what-arrow"></div>
             </div>

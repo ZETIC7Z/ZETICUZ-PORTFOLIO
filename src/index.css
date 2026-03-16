@@ -118,10 +118,13 @@ body {
   text-align: center;
   position: absolute;
   width: 100%;
-  top: 120px;
+  top: -20px;
+  z-index: 10;
   left: 0;
   font-weight: 400;
   text-transform: uppercase;
+  color: var(--accentColor);
+  letter-spacing: 7px;
 }
 
 @media screen and (min-width: 768px) {
@@ -134,4 +137,44 @@ body {
   .techstack h2 {
     font-size: 40px;
   }
+}
+
+.particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ── Custom Modern Teal Scrollbar ── */
+/* Works on Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 14, 23, 0.4); 
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accentColor);
+  border-radius: 10px;
+  border: 3px solid rgba(10, 14, 23, 0.8); /* Creates the padding/transparent gap effect */
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #4cd4bf; /* Slightly darker teal on hover */
+  border: 2px solid rgba(10, 14, 23, 0.8);
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accentColor) rgba(10, 14, 23, 0.4);
 }

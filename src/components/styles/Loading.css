@@ -219,6 +219,12 @@
   letter-spacing: 0.2px;
 }
 
+.loader-logo {
+  height: 60px;
+  width: auto;
+  transform: translateY(10px);
+}
+
 @keyframes blink {
   0% {
     opacity: 0;
@@ -400,6 +406,10 @@
   .loader-title {
     font-size: 16px;
   }
+
+  .loader-logo {
+    height: 90px;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -409,5 +419,10 @@
 
   .loader-title {
     font-size: 18px;
+  }
+
+  .loader-logo {
+    height: 120px;
+    transform: translateY(15px);
   }
 }

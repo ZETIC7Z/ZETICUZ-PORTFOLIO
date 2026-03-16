@@ -6,7 +6,9 @@ import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
 import "./styles/Navbar.css";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-export let smoother: ScrollSmoother;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+gsap.config({ trialWarn: false } as any);
+export let smoother: ScrollSmoother | undefined;
 
 const Navbar = () => {
   useEffect(() => {
@@ -20,18 +22,21 @@ const Navbar = () => {
       ignoreMobileResize: true,
     });
 
-    smoother.scrollTop(0);
-    smoother.paused(true);
+    smoother?.scrollTop(0);
+    smoother?.paused(true);
 
-    let links = document.querySelectorAll(".header ul a");
+    const links = document.querySelectorAll(".header ul a");
     links.forEach((elem) => {
-      let element = elem as HTMLAnchorElement;
+      const element = elem as HTMLAnchorElement;
       element.addEventListener("click", (e) => {
+        // Stop any ongoing slow-scrolls (like Career)
+        if (smoother) gsap.killTweensOf(smoother);
+        
         if (window.innerWidth > 1024) {
           e.preventDefault();
-          let elem = e.currentTarget as HTMLAnchorElement;
-          let section = elem.getAttribute("data-href");
-          smoother.scrollTo(section, true, "top top");
+          const elem = e.currentTarget as HTMLAnchorElement;
+          const section = elem.getAttribute("data-href");
+          if (smoother) smoother.scrollTo(section, true, "top top");
         }
       });
     });
@@ -42,29 +47,48 @@ const Navbar = () => {
   return (
     <>
       <div className="header">
-        <a href="/#" className="navbar-title" data-cursor="disable">
-          RC
-        </a>
-        <a
-          href="mailto:rajeshchittyal21@gmail.com"
-          className="navbar-connect"
-          data-cursor="disable"
-        >
-          rajeshchittyal21@gmail.com
+        <a href="#top" className="navbar-title" data-cursor="disable" onClick={(e) => {
+          e.preventDefault();
+          if (smoother) gsap.killTweensOf(smoother);
+          smoother?.scrollTo(0, true);
+        }}>
+          <img src="/images/zc-logo.png" alt="ZC Logo" className="navbar-logo" />
         </a>
         <ul>
           <li>
-            <a data-href="#about" href="#about">
+            <a data-href="#about" href="#about" title="About">
               <HoverLinks text="ABOUT" />
             </a>
           </li>
           <li>
-            <a data-href="#work" href="#work">
+            <a data-href="#career" href="#career" title="Career & Experience" onClick={() => {
+              if (window.innerWidth <= 1024) return;
+              setTimeout(() => {
+                if (smoother) {
+                  const targetScroll = smoother.offset("#work", "top top");
+                  gsap.to(smoother, {
+                    scrollTop: targetScroll,
+                    duration: 15, // Slow movie-credits effect
+                    ease: "none",
+                  });
+                }
+              }, 1200);
+            }}>
+              <HoverLinks text="CAREER & EXPERIENCE" />
+            </a>
+          </li>
+          <li>
+            <a data-href="#work" href="#work" title="Work">
               <HoverLinks text="WORK" />
             </a>
           </li>
           <li>
-            <a data-href="#contact" href="#contact">
+            <a data-href="#techstack" href="#techstack" title="Technologies">
+              <HoverLinks text="TECHNOLOGIES" />
+            </a>
+          </li>
+          <li>
+            <a data-href="#contact" href="#contact" title="Contact">
               <HoverLinks text="CONTACT" />
             </a>
           </li>
